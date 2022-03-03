@@ -84,7 +84,7 @@ async def main(bot: Client, message: Message):
                 return
 
         if message.from_user.id in Config.BANNED_USERS:
-            await message.reply_text("Sorry, You are banned!\n\nContact [@AnnihilusOP](https://t.me/AnnihilusOP)",
+            await message.reply_text("Sorry, You are banned!\n\nContact [@mandip_tank](https://t.me/mandip_tank)",
                                      disable_web_page_preview=True)
             return
 
@@ -111,7 +111,7 @@ async def main(bot: Client, message: Message):
         try:
             forwarded_msg = await message.forward(Config.DB_CHANNEL)
             file_er_id = str(forwarded_msg.message_id)
-            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=MoviZenX_{str_to_b64(file_er_id)}"
+            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=saikat_{str_to_b64(file_er_id)}"
             CH_edit = await bot.edit_message_reply_markup(message.chat.id, message.message_id,
                                                           reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
                                                               "Get Sharable Link", url=share_link)]]))
@@ -347,7 +347,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 return
             except Exception:
                 await cmd.message.edit(
-                    text="Something went Wrong. Contact my [@AnnihilusOP](https://t.me/AnnihilusOP_bot).",
+                    text="Something went Wrong. Contact my [@mandip_tank](https://t.me/mandip_tank).",
                     parse_mode="markdown",
                     disable_web_page_preview=True
                 )
